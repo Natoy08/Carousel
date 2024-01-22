@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Carousel</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                background-color: rgb(199, 158, 104);
+                color: #ffffff;
+            }
+            .title,
+            .carousel {
+                display: flex;
+                align-items: center;
+                justify-content:center;
+            }
+
+            .carousel {
+                padding: 20px;
+                background-color: #ffffff;
+                border-radius: 5px;
+            }
+
+            .carousel img {
+                display: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <h1>My Carousel</h1>
+            </div>
+            <div class="carousel">
+                <img alt="First" src="https://placehold.co/350x200?text=1" />
+                <img alt="Second" src="https://placehold.co/350x200?text=2" />
+                <img alt="Third" src="https://placehold.co/350x200?text=3" />
+                <img alt="Fourth" src="https://placehold.co/350x200?text=4" />
+                <img alt="Fifth" src="https://placehold.co/350x200?text=5" />
+            </div>
+        </div>
+        <script>
+            // Your Code
+            let img = document.querySelectorAll('.carousel img');
+            let index = 0;
+            const Carousel = function() {
+                setInterval(()=>{
+                    img[index].style.display='none';
+                    index = (index + 1) % img.length;
+                    img[index].style.display='block';
+                },1000)
+            }
+            Carousel();
+        </script>
+    </body>
+</html>
